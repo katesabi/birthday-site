@@ -1,0 +1,206 @@
+:root {
+  --memphis-font: 'Comic Sans MS', cursive;
+  --bg-dark: #1a1a1d;
+  --primary-orange: #ff6e3b;
+  --secondary-red: #ff4b2b;
+  --soft-white: #f0f0f0;
+}
+
+/* Отступы */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* --- Hero-секция --- */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 20px;
+}
+
+.memphis-headline {
+  font-family: var(--memphis-font);
+  font-size: clamp(3rem, 12vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: -2px;
+  margin-bottom: 40px;
+  text-shadow: 4px 4px var(--secondary-red);
+  animation: float 6s ease-in-out infinite;
+  color: var(--soft-white);
+  text-transform: uppercase;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.launch-btn {
+  padding: 20px 40px;
+  background: var(--secondary-red);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px #d63a24;
+  transition: transform 0.1s, box-shadow 0.1s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.launch-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px #d63a24;
+}
+
+/* --- Секция причинами --- */
+.reasons-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.reason-card {
+  padding: 30px 20px;
+  border-radius: 16px;
+  transform: rotate(-4deg);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reason-card:hover {
+  transform: rotate(4deg) scale(1.05);
+  z-index: 3;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.reason-card h3 {
+  font-family: var(--memphis-font);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: var(--primary-orange);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.reason-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #ddd;
+}
+
+/* --- Галерея --- */
+.gallery-wrapper {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-title {
+  font-family: var(--memphis-font);
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--soft-white);
+  text-shadow: 3px 3px var(--primary-orange), 6px 6px var(--secondary-red);
+  line-height: 1.1;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.photo-card {
+  aspect-ratio: 1/1;
+  background: #2a2a2e;
+  border-radius: 12px;
+  transform: rotate(-3deg);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 15px 15px var(--primary-orange);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-card:hover {
+  transform: rotate(3deg) scale(1.03);
+  z-index: 2;
+  box-shadow: 20px 20px var(--secondary-red);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.05) brightness(1.1) sepia(0.1) saturate(1.1);
+  mask-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+  -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+/* --- Блок с сообщением --- */
+.message-section {
+  padding: 60px 20px;
+  background: #ffb7c5;
+  color: #333;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 0 0 60px 60px;
+  text-align: center;
+}
+
+.message-section h2 {
+  font-family: var(--memphis-font);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #d00000;
+}
+
+.message-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Адаптив*/
+@media (max-width: 768px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-title { font-size: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .memphis-headline { font-size: clamp(2rem, 8vw, 5rem); }
+  .gallery-title { font-size: 1.4rem; }
+}
