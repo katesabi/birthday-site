@@ -1,6 +1,6 @@
 # happy birthday, bestie!
 
-this project is a personalized birthday landing page for a best friend. the goal is to create a warm, heartfelt experience with a playful memphis-style touch, making the page feel like a digital hug.
+this project is a personalized birthday landing page for ny friend. the goal is to create a warm, heartfelt experience with a playful memphis-style touch, making the page feel like a digital hug.
 
 ## original concept
 🎨 custom design built by myself.
